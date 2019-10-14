@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="d-flex flex-column">
+  <div class="d-flex justify-content-center">
+    <a href="{% url 'questions:create' %}" class="btn btn-primary my-3">
+      👀 질 문 생 성 👀
+    </a>
+  </div>
+  {% if question %}
+  <a href="{% url 'questions:detail' question.id %}" class="btn btn-info">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
+      <div style="font-size:5rem;">{{question.content}}</div>
+      <div style="font-size:5rem;">🔥GO🔥</div>
+    </div>
+  </a>
+  {% else %}
+  <h1 class="text-center">!! 질문을 생성해주세요 !!</h1>
+  {% endif%}
+</div>
+{% endblock %}

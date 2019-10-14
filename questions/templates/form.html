@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h3 class="my-3">💀 우리를 곤란하게 할 질문을 남겨보세요!</h3>
+
+<form action="" method='post' class="my-3">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="content">질문 내용</label>
+    <input class="form-control" type="text" id="content" name="content" value="{{question.content}}">
+  </div>
+  <div class="form-group">
+    <label for="choice1">선택1</label>
+    <input class="form-control" type="text" id="choice1" name="choice1" value="{{question.choice1}}">
+  </div>
+  <div class="form-group">
+    <label for="choice2">선택2</label>
+    <input class="form-control" type="text" id="choice2" name="choice2" value="{{question.choice2}}">
+  </div>
+  <input class="btn btn-primary" type="submit" value="제출">
+</form>
+
+{% endblock %}
